@@ -1,51 +1,280 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Dashboard Moderno</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gilmax Dev | Portfólio & IA</title>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<!-- Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+body{
+    background: linear-gradient(135deg,#0f172a,#0b1120);
+    color:white;
+}
+
+/* NAVBAR */
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 10%;
+    position:fixed;
+    width:100%;
+    background:rgba(0,0,0,0.3);
+    backdrop-filter:blur(10px);
+    z-index:1000;
+}
+
+nav h2{
+    font-weight:700;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:20px;
+}
+
+nav a{
+    text-decoration:none;
+    color:white;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:#38bdf8;
+}
+
+/* HERO */
+.hero{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:0 20px;
+}
+
+.hero h1{
+    font-size:3rem;
+    margin-bottom:20px;
+}
+
+.hero span{
+    color:#38bdf8;
+}
+
+.hero p{
+    max-width:600px;
+    margin-bottom:30px;
+    opacity:0.8;
+}
+
+.btn{
+    padding:12px 30px;
+    background:#38bdf8;
+    border:none;
+    border-radius:8px;
+    color:black;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+}
+
+/* SECTIONS */
+section{
+    padding:100px 10%;
+}
+
+section h2{
+    text-align:center;
+    margin-bottom:40px;
+    font-size:2rem;
+}
+
+/* CARDS */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:rgba(255,255,255,0.05);
+    padding:25px;
+    border-radius:15px;
+    transition:0.3s;
+    backdrop-filter:blur(8px);
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 20px 40px rgba(0,0,0,0.5);
+}
+
+/* DASHBOARD */
+.dashboard{
+    background:rgba(255,255,255,0.03);
+    border-radius:15px;
+    padding:30px;
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:30px;
+    background:#05080f;
+    margin-top:50px;
+    font-size:0.9rem;
+    opacity:0.7;
+}
+
+@media(max-width:768px){
+    .hero h1{
+        font-size:2rem;
+    }
+}
+
+</style>
 </head>
 <body>
 
-<header>
-    <nav>
-        <h1 class="logo">MeuSite</h1>
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Projetos</a></li>
-            <li><a href="#">Contato</a></li>
-        </ul>
-    </nav>
-</header>
+<nav>
+    <h2>Gilmax Dev</h2>
+    <ul>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#dashboard">Dashboard</a></li>
+        <li><a href="#ia">IA & LLM</a></li>
+    </ul>
+</nav>
 
-<section class="hero">
-    <h2>Visualizações modernas e rápidas</h2>
-    <p>Do simples ao avançado com estilo futurista.</p>
-    <button>Começar</button>
+<div class="hero">
+    <h1>Desenvolvedor <span>Front-End & IA</span></h1>
+    <p>Construindo dashboards modernos, interfaces performáticas e explorando Inteligência Artificial com Large Language Models.</p>
+    <a href="#projetos"><button class="btn">Ver Projetos</button></a>
+</div>
+
+<section id="sobre">
+    <h2>Sobre Mim</h2>
+    <div class="grid">
+        <div class="card">
+            <h3>🚀 Desenvolvimento Web</h3>
+            <p>Criação de interfaces modernas, responsivas e focadas em performance.</p>
+        </div>
+        <div class="card">
+            <h3>📊 Dashboards</h3>
+            <p>Visualização de dados em tempo real utilizando gráficos interativos.</p>
+        </div>
+        <div class="card">
+            <h3>🤖 Inteligência Artificial</h3>
+            <p>Estudo e aplicação de IA, automações e Large Language Models.</p>
+        </div>
+    </div>
 </section>
 
-<section class="cards">
-    <div class="card">
-        <h3>Analytics</h3>
-        <p>Dados em tempo real</p>
+<section id="projetos">
+    <h2>Projetos</h2>
+    <div class="grid">
+        <div class="card">
+            <h3>Dashboard Financeiro</h3>
+            <p>Sistema de monitoramento de métricas financeiras com gráficos dinâmicos.</p>
+        </div>
+        <div class="card">
+            <h3>Landing Page Moderna</h3>
+            <p>Interface futurista com foco em conversão e experiência do usuário.</p>
+        </div>
+        <div class="card">
+            <h3>Exploração de LLM</h3>
+            <p>Testes com modelos de linguagem para geração de texto e automações.</p>
+        </div>
     </div>
+</section>
 
-    <div class="card">
-        <h3>Monitoramento</h3>
-        <p>Controle total do sistema</p>
+<section id="dashboard">
+    <h2>Dashboard Interativo</h2>
+    <div class="dashboard">
+        <canvas id="myChart"></canvas>
     </div>
+</section>
 
-    <div class="card">
-        <h3>Performance</h3>
-        <p>Alta eficiência garantida</p>
+<section id="ia">
+    <h2>Inteligência Artificial & LLM</h2>
+    <div class="grid">
+        <div class="card">
+            <h3>O que é LLM?</h3>
+            <p>Large Language Models são modelos treinados com grandes volumes de dados para compreender e gerar linguagem natural.</p>
+        </div>
+        <div class="card">
+            <h3>Aplicações</h3>
+            <p>Chatbots inteligentes, automação de conteúdo, análise de dados, assistentes virtuais e muito mais.</p>
+        </div>
+        <div class="card">
+            <h3>Futuro</h3>
+            <p>A IA está transformando o desenvolvimento de software e criando novas possibilidades no mercado global.</p>
+        </div>
     </div>
 </section>
 
 <footer>
-    <p>© 2026 Gilmax Dev</p>
+    © 2026 Gilmax Dev | Desenvolvido com HTML, CSS, JavaScript e GitHub Pages
 </footer>
 
-<script src="script.js"></script>
+<script>
+
+const ctx = document.getElementById('myChart');
+
+new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun'],
+        datasets: [{
+            label: 'Performance',
+            data: [12, 19, 3, 5, 2, 15],
+            borderColor: '#38bdf8',
+            backgroundColor: 'rgba(56,189,248,0.2)',
+            tension: 0.4
+        }]
+    },
+    options: {
+        responsive: true,
+        plugins: {
+            legend: {
+                labels: {
+                    color: 'white'
+                }
+            }
+        },
+        scales: {
+            x: {
+                ticks: { color: 'white' }
+            },
+            y: {
+                ticks: { color: 'white' }
+            }
+        }
+    }
+});
+
+</script>
+
 </body>
 </html>
