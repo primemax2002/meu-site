@@ -3,62 +3,52 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gilmax Dev | Portfólio & IA</title>
+<title>MaxDev | Inteligência & Performance</title>
 
-<!-- Google Font -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-<!-- Chart.js -->
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
 
 <style>
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins', sans-serif;
-}
-
+*{margin:0;padding:0;box-sizing:border-box}
 body{
-    background: linear-gradient(135deg,#0f172a,#0b1120);
+    font-family:'Poppins',sans-serif;
+    background:#0a0f1c;
     color:white;
+    overflow-x:hidden;
 }
 
-/* NAVBAR */
+#particles-js{
+    position:fixed;
+    width:100%;
+    height:100%;
+    z-index:-1;
+}
+
 nav{
     display:flex;
     justify-content:space-between;
-    align-items:center;
-    padding:20px 10%;
+    padding:20px 8%;
     position:fixed;
     width:100%;
-    background:rgba(0,0,0,0.3);
+    background:rgba(0,0,0,0.4);
     backdrop-filter:blur(10px);
-    z-index:1000;
 }
 
 nav h2{
-    font-weight:700;
-}
-
-nav ul{
-    list-style:none;
-    display:flex;
-    gap:20px;
+    font-family:'Orbitron',sans-serif;
+    color:#00f5ff;
 }
 
 nav a{
-    text-decoration:none;
     color:white;
+    text-decoration:none;
+    margin-left:20px;
     transition:0.3s;
 }
 
-nav a:hover{
-    color:#38bdf8;
-}
+nav a:hover{color:#00f5ff}
 
-/* HERO */
 .hero{
     height:100vh;
     display:flex;
@@ -66,51 +56,47 @@ nav a:hover{
     justify-content:center;
     align-items:center;
     text-align:center;
-    padding:0 20px;
+    padding:20px;
 }
 
 .hero h1{
+    font-family:'Orbitron',sans-serif;
     font-size:3rem;
-    margin-bottom:20px;
-}
-
-.hero span{
-    color:#38bdf8;
+    color:#00f5ff;
 }
 
 .hero p{
     max-width:600px;
-    margin-bottom:30px;
+    margin:20px 0;
     opacity:0.8;
 }
 
 .btn{
     padding:12px 30px;
-    background:#38bdf8;
     border:none;
     border-radius:8px;
+    background:#00f5ff;
     color:black;
-    font-weight:600;
+    font-weight:bold;
     cursor:pointer;
     transition:0.3s;
 }
 
 .btn:hover{
-    transform:translateY(-3px);
+    transform:scale(1.05);
 }
 
-/* SECTIONS */
 section{
-    padding:100px 10%;
+    padding:100px 8%;
 }
 
-section h2{
+h2.section-title{
     text-align:center;
     margin-bottom:40px;
-    font-size:2rem;
+    font-family:'Orbitron';
+    color:#00f5ff;
 }
 
-/* CARDS */
 .grid{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
@@ -122,158 +108,174 @@ section h2{
     padding:25px;
     border-radius:15px;
     transition:0.3s;
-    backdrop-filter:blur(8px);
 }
 
 .card:hover{
     transform:translateY(-10px);
-    box-shadow:0 20px 40px rgba(0,0,0,0.5);
+    box-shadow:0 20px 40px rgba(0,255,255,0.2);
 }
 
-/* DASHBOARD */
+.counter{
+    font-size:2rem;
+    font-weight:bold;
+    color:#00f5ff;
+}
+
 .dashboard{
-    background:rgba(255,255,255,0.03);
-    border-radius:15px;
+    background:rgba(255,255,255,0.05);
     padding:30px;
+    border-radius:15px;
 }
 
-/* FOOTER */
+.chat-box{
+    margin-top:30px;
+    background:rgba(255,255,255,0.05);
+    padding:20px;
+    border-radius:15px;
+}
+
+.chat-box input{
+    width:100%;
+    padding:10px;
+    margin-top:10px;
+    border:none;
+    border-radius:8px;
+}
+
 footer{
     text-align:center;
     padding:30px;
     background:#05080f;
-    margin-top:50px;
-    font-size:0.9rem;
     opacity:0.7;
 }
 
 @media(max-width:768px){
-    .hero h1{
-        font-size:2rem;
-    }
+.hero h1{font-size:2rem}
 }
-
 </style>
 </head>
+
 <body>
 
+<div id="particles-js"></div>
+
 <nav>
-    <h2>Gilmax Dev</h2>
-    <ul>
-        <li><a href="#sobre">Sobre</a></li>
-        <li><a href="#projetos">Projetos</a></li>
-        <li><a href="#dashboard">Dashboard</a></li>
-        <li><a href="#ia">IA & LLM</a></li>
-    </ul>
+    <h2>MaxDev</h2>
+    <div>
+        <a href="#sobre">Sobre</a>
+        <a href="#dashboard">Dashboard</a>
+        <a href="#ia">IA</a>
+    </div>
 </nav>
 
 <div class="hero">
-    <h1>Desenvolvedor <span>Front-End & IA</span></h1>
-    <p>Construindo dashboards modernos, interfaces performáticas e explorando Inteligência Artificial com Large Language Models.</p>
-    <a href="#projetos"><button class="btn">Ver Projetos</button></a>
+    <h1>Inteligência & Performance</h1>
+    <p>Construindo experiências digitais modernas, dashboards interativos e explorando o poder da Inteligência Artificial.</p>
+    <button class="btn" onclick="scrollToSection('dashboard')">Explorar</button>
 </div>
 
 <section id="sobre">
-    <h2>Sobre Mim</h2>
+    <h2 class="section-title">Sobre MaxDev</h2>
     <div class="grid">
         <div class="card">
-            <h3>🚀 Desenvolvimento Web</h3>
-            <p>Criação de interfaces modernas, responsivas e focadas em performance.</p>
+            <div class="counter" data-target="15">0</div>
+            <p>Projetos Desenvolvidos</p>
         </div>
         <div class="card">
-            <h3>📊 Dashboards</h3>
-            <p>Visualização de dados em tempo real utilizando gráficos interativos.</p>
+            <div class="counter" data-target="5">0</div>
+            <p>Dashboards Criados</p>
         </div>
         <div class="card">
-            <h3>🤖 Inteligência Artificial</h3>
-            <p>Estudo e aplicação de IA, automações e Large Language Models.</p>
-        </div>
-    </div>
-</section>
-
-<section id="projetos">
-    <h2>Projetos</h2>
-    <div class="grid">
-        <div class="card">
-            <h3>Dashboard Financeiro</h3>
-            <p>Sistema de monitoramento de métricas financeiras com gráficos dinâmicos.</p>
-        </div>
-        <div class="card">
-            <h3>Landing Page Moderna</h3>
-            <p>Interface futurista com foco em conversão e experiência do usuário.</p>
-        </div>
-        <div class="card">
-            <h3>Exploração de LLM</h3>
-            <p>Testes com modelos de linguagem para geração de texto e automações.</p>
+            <div class="counter" data-target="100">0</div>
+            <p>% Foco em Performance</p>
         </div>
     </div>
 </section>
 
 <section id="dashboard">
-    <h2>Dashboard Interativo</h2>
+    <h2 class="section-title">Dashboard Interativo</h2>
     <div class="dashboard">
         <canvas id="myChart"></canvas>
     </div>
 </section>
 
 <section id="ia">
-    <h2>Inteligência Artificial & LLM</h2>
-    <div class="grid">
-        <div class="card">
-            <h3>O que é LLM?</h3>
-            <p>Large Language Models são modelos treinados com grandes volumes de dados para compreender e gerar linguagem natural.</p>
-        </div>
-        <div class="card">
-            <h3>Aplicações</h3>
-            <p>Chatbots inteligentes, automação de conteúdo, análise de dados, assistentes virtuais e muito mais.</p>
-        </div>
-        <div class="card">
-            <h3>Futuro</h3>
-            <p>A IA está transformando o desenvolvimento de software e criando novas possibilidades no mercado global.</p>
-        </div>
+    <h2 class="section-title">Falar com IA</h2>
+    <div class="chat-box">
+        <p id="response">Pergunte algo sobre Inteligência Artificial...</p>
+        <input type="text" id="userInput" placeholder="Digite sua pergunta..." onkeypress="handleKey(event)">
     </div>
 </section>
 
 <footer>
-    © 2026 Gilmax Dev | Desenvolvido com HTML, CSS, JavaScript e GitHub Pages
+© 2026 MaxDev | Marca pessoal focada em tecnologia e IA
 </footer>
 
 <script>
+function scrollToSection(id){
+document.getElementById(id).scrollIntoView({behavior:'smooth'});
+}
 
-const ctx = document.getElementById('myChart');
-
-new Chart(ctx, {
-    type: 'line',
-    data: {
-        labels: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun'],
-        datasets: [{
-            label: 'Performance',
-            data: [12, 19, 3, 5, 2, 15],
-            borderColor: '#38bdf8',
-            backgroundColor: 'rgba(56,189,248,0.2)',
-            tension: 0.4
-        }]
-    },
-    options: {
-        responsive: true,
-        plugins: {
-            legend: {
-                labels: {
-                    color: 'white'
-                }
-            }
-        },
-        scales: {
-            x: {
-                ticks: { color: 'white' }
-            },
-            y: {
-                ticks: { color: 'white' }
-            }
-        }
-    }
+/* Contador animado */
+const counters=document.querySelectorAll('.counter');
+counters.forEach(counter=>{
+counter.innerText='0';
+const updateCounter=()=>{
+const target=+counter.getAttribute('data-target');
+const c=+counter.innerText;
+const increment=target/100;
+if(c<target){
+counter.innerText=Math.ceil(c+increment);
+setTimeout(updateCounter,20);
+}else{
+counter.innerText=target;
+}
+};
+updateCounter();
 });
 
+/* Dashboard */
+new Chart(document.getElementById('myChart'),{
+type:'line',
+data:{
+labels:['Jan','Fev','Mar','Abr','Mai','Jun'],
+datasets:[{
+label:'Crescimento',
+data:[5,10,8,15,20,30],
+borderColor:'#00f5ff',
+backgroundColor:'rgba(0,245,255,0.2)',
+tension:0.4
+}]
+}
+});
+
+/* Chat IA Simulado */
+function handleKey(e){
+if(e.key==="Enter"){
+let input=document.getElementById("userInput").value.toLowerCase();
+let response=document.getElementById("response");
+
+if(input.includes("llm")){
+response.innerText="LLMs são modelos de linguagem treinados com grandes volumes de dados para gerar texto inteligente.";
+}
+else if(input.includes("ia")){
+response.innerText="Inteligência Artificial permite que sistemas aprendam e tomem decisões baseadas em dados.";
+}
+else{
+response.innerText="Essa é uma simulação local. Futuramente pode ser conectada a uma API real.";
+}
+}
+}
+
+/* Partículas */
+particlesJS("particles-js",{
+particles:{
+number:{value:80},
+size:{value:3},
+move:{speed:1},
+line_linked:{enable:true}
+}
+});
 </script>
 
 </body>
